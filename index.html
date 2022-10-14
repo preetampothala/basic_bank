@@ -11,8 +11,9 @@
 
 <body>
   <nav>
-    <h3 class="welcome">Log in to get started</h3>
     <img src="logo.svg" alt="Logo" class="logo" />
+    <h3 class="welcome">Log in to get started</h3>
+
     <form class="login">
       <input type="text" placeholder="Username" class="login_input login_input-user" />
       <!-- In practice, use type="password" -->
@@ -29,7 +30,8 @@
     </section>
     <section class="container">
       <article class="flexchildleft">
-        <div class="boxleft">
+        <div class="forms" >
+<div class="boxleft">
           <h3>Transfer money</h3>
           <form class="form-transfer">
 
@@ -51,12 +53,12 @@
 
             <p class="error-msg hidden"></p>
             <!-- <button class="form__btn form__btn--transfer">&rarr;</button> -->
-            <button type="submit" class="btn">Deposit</button>
+            <button type="submit" class="btn">Transfer</button>
           </form>
         </div>
         <div class="boxleft">
           <h3>Loan money</h3>
-          <form class="form-transfer">
+          <form class="form-loan">
 
             <div class="form-group">
               <label for="amount" class="form-label">Amount*</label>
@@ -65,27 +67,29 @@
 
             <p class="error-msg hidden"></p>
             <!-- <button class="form__btn form__btn--transfer">&rarr;</button> -->
-            <button type="submit" class="btn">Deposit</button>
+            <button type="submit" class="btn loan-btn">Request money</button>
           </form>
         </div>
-        <div class="summary">
+        </div>
+
+       <div class="summary">
           <div>
             <p class="summary__label">In</p>
-            <h2 class="summary__value summary__value--in">0000€</h2>
+            <h3 class="summary__value summary__value--in">0000€</h3>
           </div>
           <div>
             <p class="summary__label">Out</p>
-            <h2 class="summary__value summary__value--out">0000€</h2>
+            <h3 class="summary__value summary__value--out">0000€</h3>
           </div>
           <div>
             <p class="summary__label">Interest</p>
-            <h2 class="summary__value summary__value--interest">0000€</h2>
+            <h3 class="summary__value summary__value--interest">0000€</h3>
           </div>
 
           <button class="btn-sort">&downarrow; SORT</button>
         </div>
+ </article>
 
-      </article>
       <article class="flexchildright">
         <div class="boxright transactions">
 
@@ -93,14 +97,14 @@
               <div class="transactions-type transactions-type-deposit">
                 2
               </div>
-              <div class="transactions-msg">Deposit</div>
+              <div class="transactions-type">Deposit</div>
               <div class="transactions-value">4000$</div>
             </div>
             <div class="transactions-row">
               <div class="transactions-type transactions-type-withdrawal">
                 1
               </div>
-              <div class="transactions-msg">Loan</div>
+              <div class="transactions-type">Loan</div>
               <div class="transactions-value">-378$</div>
             </div>
 
