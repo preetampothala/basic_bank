@@ -12,7 +12,7 @@
 <body>
   <nav>
     <h3 class="welcome">Log in to get started</h3>
-    <img src="buffbanklogo.svg" alt="Logo" class="logo" />
+    <img src="logo.svg" alt="Logo" class="logo" />
     <form class="login">
       <input type="text" placeholder="Username" class="login_input login_input-user" />
       <!-- In practice, use type="password" -->
@@ -27,7 +27,7 @@
         <h2 class="balance-value">$0000</h2>
       </article>
     </section>
-    <section class="flexx">
+    <section class="container">
       <article class="flexchildleft">
         <div class="boxleft">
           <h3>Transfer money</h3>
@@ -71,15 +71,15 @@
         <div class="summary">
           <div>
             <p class="summary__label">In</p>
-            <p class="summary__value summary__value--in">0000€</p>
+            <h2 class="summary__value summary__value--in">0000€</h2>
           </div>
           <div>
             <p class="summary__label">Out</p>
-            <p class="summary__value summary__value--out">0000€</p>
+            <h2 class="summary__value summary__value--out">0000€</h2>
           </div>
           <div>
             <p class="summary__label">Interest</p>
-            <p class="summary__value summary__value--interest">0000€</p>
+            <h2 class="summary__value summary__value--interest">0000€</h2>
           </div>
 
           <button class="btn-sort">&downarrow; SORT</button>
@@ -88,7 +88,7 @@
       </article>
       <article class="flexchildright">
         <div class="boxright transactions">
-          <div>
+
             <div class="transactions-row">
               <div class="transactions-type transactions-type-deposit">
                 2
@@ -103,7 +103,7 @@
               <div class="transactions-msg">Loan</div>
               <div class="transactions-value">-378$</div>
             </div>
-          </div>
+
         </div>
 
       </article>

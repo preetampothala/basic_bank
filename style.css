@@ -21,6 +21,11 @@ nav {
 	align-items: center;
 	/* margin: 1.5rem; */
 }
+.app {
+	opacity: 0;
+	transition: all 1s;
+}
+
 .logo {
 	width: 150px;
 }
@@ -52,10 +57,8 @@ nav {
 	text-transform: uppercase;
 }
 
-.flexx {
-	align-items: stretch;
+.container {
 	display: flex;
-	flex-direction: row;
 	justify-content: space-between;
 }
 .flexchildleft {
@@ -167,4 +170,4 @@ nav {
 }
 .negative {
 	color: red;
-}	
+}
