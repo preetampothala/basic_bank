@@ -1,93 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Basic Bank</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <main>
-      <section class="balance">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Basic Bank</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav>
+    <h3 class="welcome">Log in to get started</h3>
+    <img src="buffbanklogo.svg" alt="Logo" class="logo" />
+    <form class="login">
+      <input type="text" placeholder="Username" class="login_input login_input-user" />
+      <!-- In practice, use type="password" -->
+      <input type="password" placeholder="PIN" maxlength="4" class="login_input login_input-pin" />
+      <button class="login-btn">&rarr;</button>
+    </form>
+  </nav>
+  <main class="app">
+    <section>
+      <article class="balance">
         <h2 class="balance-label">Current balance</h2>
         <h2 class="balance-value">$0000</h2>
-      </section>
-      <section>
-        <article class="container">
-          <div class="box-wrap">
-            <h3>Transfer money</h3>
-            <form class="form-transfer">
-              <div class="form-group">
-                <label for="amount" class="form-label">Amount*</label>
-                <input type="number" id="amount" min="1" required />
-              </div>
-              <div class="form-group">
-                <label for="message" class="form-label">Message*</label>
-                <textarea
-                  name="message"
-                  id="message"
-                  maxlength="10"
-                  placeholder="Message(10 characters max)"
-                  required
-                ></textarea>
-              </div>
-              <div class="form-group">
-                <label for="color-input"
-                  >Please select color for transaction</label
-                >
-                <input type="color" id="color-input" required />
-              </div>
-              <div class="radio-ul">
-                <legend>Transfer type*</legend>
-                <ul>
-                  <li>
-                    <input
-                      type="radio"
-                      id="deposit"
-                      name="radio"
-                      value="deposit"
-                    />
-                    <label for="deposit">Deposit</label>
-                  </li>
-                  <li>
-                    <input
-                      type="radio"
-                      id="withdraw"
-                      name="radio"
-                      value="withdraw"
-                    />
-                    <label for="withdraw">Withdrawl</label>
-                  </li>
-                </ul>
-              </div>
-              <p class="error-msg hidden"></p>
-              <!-- <button class="form__btn form__btn--transfer">&rarr;</button> -->
-              <button type="submit" class="btn">Deposit</button>
-            </form>
+      </article>
+    </section>
+    <section class="flexx">
+      <article class="flexchildleft">
+        <div class="boxleft">
+          <h3>Transfer money</h3>
+          <form class="form-transfer">
+
+            <div class="form-group">
+              <label for="amount" class="form-label">Amount*</label>
+              <input type="number" id="amount" min="1" required />
+            </div>
+            <div class="form-group">
+              <label for="transferto" class="form-label">Transfer to*</label>
+              <input name="transferto" id="transferto" placeholder="Transfer to - account name" required></input>
+            </div>
+
+            <!-- <div class="form-group">
+							<label for="color-input"
+								>Please select color for transaction</label
+							>
+							<input type="color" id="color-input" required />
+						</div> -->
+
+            <p class="error-msg hidden"></p>
+            <!-- <button class="form__btn form__btn--transfer">&rarr;</button> -->
+            <button type="submit" class="btn">Deposit</button>
+          </form>
+        </div>
+        <div class="boxleft">
+          <h3>Loan money</h3>
+          <form class="form-transfer">
+
+            <div class="form-group">
+              <label for="amount" class="form-label">Amount*</label>
+              <input type="number" id="amount" min="1" required />
+            </div>
+
+            <p class="error-msg hidden"></p>
+            <!-- <button class="form__btn form__btn--transfer">&rarr;</button> -->
+            <button type="submit" class="btn">Deposit</button>
+          </form>
+        </div>
+        <div class="summary">
+          <div>
+            <p class="summary__label">In</p>
+            <p class="summary__value summary__value--in">0000€</p>
           </div>
-        </article>
-        <article class="container trans-wrap" id="transactions">
+          <div>
+            <p class="summary__label">Out</p>
+            <p class="summary__value summary__value--out">0000€</p>
+          </div>
+          <div>
+            <p class="summary__label">Interest</p>
+            <p class="summary__value summary__value--interest">0000€</p>
+          </div>
+
+          <button class="btn-sort">&downarrow; SORT</button>
+        </div>
+
+      </article>
+      <article class="flexchildright">
+        <div class="boxright transactions">
           <div>
             <div class="transactions-row">
               <div class="transactions-type transactions-type-deposit">
-                2 deposit
+                2
               </div>
-              <div class="transactions-msg">Message</div>
+              <div class="transactions-msg">Deposit</div>
               <div class="transactions-value">4000$</div>
             </div>
             <div class="transactions-row">
               <div class="transactions-type transactions-type-withdrawal">
-                1 withdrawal
+                1
               </div>
-              <div class="transactions-msg">Message</div>
+              <div class="transactions-msg">Loan</div>
               <div class="transactions-value">-378$</div>
             </div>
           </div>
-        </article>
-      </section>
-    </main>
+        </div>
 
-    <script src="script.js"></script>
-  </body>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
