@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Basic Bank</title>
+    <link rel="stylesheet" href="dummy.css" />
+  </head>
+  <body>
+    <nav>
+      <h3 class="welcome">Log in to get started</h3>
+      <img src="logo.png" alt="Logo" class="logo" />
+      <form class="login">
+        <input
+          type="text"
+          placeholder="user"
+          class="login__input login__input--user"
+        />
+        <!-- In practice, use type="password" -->
+        <input
+          type="text"
+          placeholder="PIN"
+          maxlength="4"
+          class="login__input login__input--pin"
+        />
+        <button class="login__btn">&rarr;</button>
+      </form>
+    </nav>
+    <main class="app">
+      <section>
+        <article class="balance">
+          <h2 class="balance-label">Current balance</h2>
+          <h2 class="balance-value">$0000</h2>
+        </article>
+      </section>
+      <section class="flexx">
+        <article class="box">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus
+            illo dolore dolor omnis culpa odit non quod debitis amet fuga
+            ratione, nisi ipsa autem ipsam quam molestias sint suscipit alias?
+          </p>
+        </article>
+        <article class="box">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus
+            illo dolore dolor omnis culpa odit non quod debitis amet fuga
+            ratione, nisi ipsa autem ipsam quam molestias sint suscipit alias?
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Basic Bank</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="balance">
+        <h2 class="balance-label">Current balance</h2>
+        <h2 class="balance-value">$0000</h2>
+      </section>
+      <section>
+        <article class="container">
+          <div class="box-wrap">
+            <h3>Transfer money</h3>
+            <form class="form-transfer">
+              <div class="form-group">
+                <label for="amount" class="form-label">Amount*</label>
+                <input type="number" id="amount" min="1" required />
+              </div>
+              <div class="form-group">
+                <label for="message" class="form-label">Message*</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  maxlength="10"
+                  placeholder="Message(10 characters max)"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label for="color-input"
+                  >Please select color for transaction</label
+                >
+                <input type="color" id="color-input" required />
+              </div>
+              <div class="radio-ul">
+                <legend>Transfer type*</legend>
+                <ul>
+                  <li>
+                    <input
+                      type="radio"
+                      id="deposit"
+                      name="radio"
+                      value="deposit"
+                    />
+                    <label for="deposit">Deposit</label>
+                  </li>
+                  <li>
+                    <input
+                      type="radio"
+                      id="withdraw"
+                      name="radio"
+                      value="withdraw"
+                    />
+                    <label for="withdraw">Withdrawl</label>
+                  </li>
+                </ul>
+              </div>
+              <p class="error-msg hidden"></p>
+              <!-- <button class="form__btn form__btn--transfer">&rarr;</button> -->
+              <button type="submit" class="btn">Deposit</button>
+            </form>
+          </div>
+        </article>
+        <article class="container trans-wrap" id="transactions">
+          <div>
+            <div class="transactions-row">
+              <div class="transactions-type transactions-type-deposit">
+                2 deposit
+              </div>
+              <div class="transactions-msg">Message</div>
+              <div class="transactions-value">4000$</div>
+            </div>
+            <div class="transactions-row">
+              <div class="transactions-type transactions-type-withdrawal">
+                1 withdrawal
+              </div>
+              <div class="transactions-msg">Message</div>
+              <div class="transactions-value">-378$</div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

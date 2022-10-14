@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  max-width: 90%;
+  margin: 4rem auto;
+}
+body {
+  background-color: rgb(255, 255, 255);
+  font-family: "Adobe Clean", sans-serif;
+  padding: 1rem;
+  height: 100vh;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  align-items: center;
+  /* margin: 1.5rem; */
+}
+.login input {
+  /* width: 100%; */
+  width: 100px;
+  padding: 15px 10px;
+  border-radius: 5px;
+  border: rgb(228, 228, 228) 1px solid;
+}
+
+.flexx {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.box {
+  flex-shrink: 1;
+  background-color: white;
+  padding: 1rem 1.5rem;
+  box-shadow: 0px 0px 7px 2px rgba(70, 63, 63, 0.1);
+  border-radius: 0.3rem;
+  margin: 1.5rem;
+}
+.balance {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem;
+}
