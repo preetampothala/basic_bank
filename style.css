@@ -69,6 +69,8 @@ nav {
 }
 .flexchildright {
 	flex: 50%;
+	display: flex;
+	flex-direction: column;
 	align-self: stretch;
 }
 .boxleft {
@@ -90,6 +92,15 @@ nav {
 	border-radius: 0.3rem;
 	margin: 1rem;
 }
+.boxright h3 {
+	padding: 1rem 1.5rem;
+	border-bottom: 1px solid #eee;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	background-color: #fff;
+}
+
 .balance {
 	display: flex;
 	justify-content: space-between;
@@ -171,7 +182,8 @@ nav {
 	margin: 1rem;
 }
 .transactions {
-	overflow: scroll;
+	/* overflow: scroll; */
+	height: 65vh;
 }
 .transactions-row {
 	display: flex;
@@ -194,5 +206,13 @@ nav {
 	color: green;
 }
 .negative {
+	color: red;
+}
+.summaryvaluein,
+.summaryvalueinterest {
+	color: green;
+}
+
+.summaryvalueout {
 	color: red;
 }

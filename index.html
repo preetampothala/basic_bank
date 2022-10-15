@@ -13,11 +13,10 @@
   <nav>
     <img src="logo.svg" alt="Logo" class="logo" />
     <h3 class="welcome">Log in to get started</h3>
-
-    <form class="login">
-      <input type="text" placeholder="Username" class="login_input login_input-user" />
+<form class="login">
+      <input type="text" placeholder="Username" class="login-input-user" />
       <!-- In practice, use type="password" -->
-      <input type="password" placeholder="PIN" maxlength="4" class="login_input login_input-pin" />
+      <input type="password" placeholder="PIN" maxlength="4" class="login-input-pin" />
       <button class="login-btn">&rarr;</button>
     </form>
   </nav>
@@ -30,84 +29,77 @@
     </section>
     <section class="container">
       <article class="flexchildleft">
-        <div class="forms" >
-<div class="boxleft">
-          <h3>Transfer money</h3>
-          <form class="form-transfer">
+        <div class="forms">
+          <div class="boxleft">
+            <h3>Transfer money</h3>
+            <form class="form-transfer">
 
-            <div class="form-group">
-              <label for="amount" class="form-label">Amount*</label>
-              <input type="number" id="amount" min="1" required />
-            </div>
-            <div class="form-group">
-              <label for="transferto" class="form-label">Transfer to*</label>
-              <input name="transferto" id="transferto" placeholder="Transfer to - account name" required></input>
-            </div>
+              <div class="form-group">
+                <label for="transferamount" class="form-label">Amount*</label>
+                <input type="number" id="transferamount" min="1" required />
+              </div>
+              <div class="form-group">
+                <label for="transferto" class="form-label">Transfer to*</label>
+                <input name="transferto" id="transferto" placeholder="Transfer to - account name" required></input>
+              </div>
 
-            <!-- <div class="form-group">
-							<label for="color-input"
-								>Please select color for transaction</label
-							>
-							<input type="color" id="color-input" required />
-						</div> -->
-
-            <p class="error-msg hidden"></p>
-            <!-- <button class="form__btn form__btn--transfer">&rarr;</button> -->
-            <button type="submit" class="btn">Transfer</button>
-          </form>
-        </div>
-        <div class="boxleft">
-          <h3>Loan money</h3>
-          <form class="form-loan">
-
-            <div class="form-group">
-              <label for="amount" class="form-label">Amount*</label>
-              <input type="number" id="amount" min="1" required />
-            </div>
-
-            <p class="error-msg hidden"></p>
-            <!-- <button class="form__btn form__btn--transfer">&rarr;</button> -->
-            <button type="submit" class="btn loan-btn">Request money</button>
-          </form>
-        </div>
-        </div>
-
-       <div class="summary">
-          <div>
-            <p class="summary__label">In</p>
-            <h3 class="summary__value summary__value--in">0000€</h3>
+              <p class="error-msg hidden"></p>
+              <!-- <button class="form__btn form__btn--transfer">&rarr;</button> -->
+              <button type="submit" class="btn transfer-btn">Transfer</button>
+            </form>
           </div>
-          <div>
-            <p class="summary__label">Out</p>
-            <h3 class="summary__value summary__value--out">0000€</h3>
-          </div>
-          <div>
-            <p class="summary__label">Interest</p>
-            <h3 class="summary__value summary__value--interest">0000€</h3>
-          </div>
+          <div class="boxleft">
+            <h3>Loan money</h3>
+            <form class="form-loan">
 
-          <button class="btn-sort">&downarrow; SORT</button>
+              <div class="form-group">
+                <label for="loanamount" class="form-label">Amount*</label>
+                <input type="number" id="loanamount" min="1" required />
+              </div>
+
+              <p class="error-msg hidden"></p>
+              <!-- <button class="form__btn form__btn--transfer">&rarr;</button> -->
+              <button type="submit" class="btn loan-btn">Request money</button>
+            </form>
+          </div>
         </div>
- </article>
+
+      </article>
 
       <article class="flexchildright">
         <div class="boxright transactions">
-
-            <div class="transactions-row">
-              <div class="transactions-type transactions-type-deposit">
-                2
-              </div>
-              <div class="transactions-type">Deposit</div>
-              <div class="transactions-value">4000$</div>
+          <h3>Transactions</h3>
+          <div class="transactions-row">
+            <div class="transactions-type transactions-type-deposit">
+              2
             </div>
-            <div class="transactions-row">
-              <div class="transactions-type transactions-type-withdrawal">
-                1
-              </div>
-              <div class="transactions-type">Loan</div>
-              <div class="transactions-value">-378$</div>
+            <div class="transactions-type">Deposit</div>
+            <div class="transactions-value">4000$</div>
+          </div>
+          <div class="transactions-row">
+            <div class="transactions-type transactions-type-withdrawal">
+              1
             </div>
+            <div class="transactions-type">Loan</div>
+            <div class="transactions-value">-378$</div>
+          </div>
 
+        </div>
+        <div class="summary">
+          <div>
+            <p class="summary_label">In</p>
+            <h3 class="summaryvaluein">0000€</h3>
+          </div>
+          <div>
+            <p class="summary_label">Out</p>
+            <h3 class="summaryvalueout">0000€</h3>
+          </div>
+          <div>
+            <p class="summary_label">Interest</p>
+            <h3 class="summaryvalueinterest">0000€</h3>
+          </div>
+
+          <button class="btn-sort">&downarrow; SORT</button>
         </div>
 
       </article>
