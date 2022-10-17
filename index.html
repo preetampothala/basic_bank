@@ -24,7 +24,7 @@
     <section>
       <article class="balance">
         <h2 class="balance-label">Current balance</h2>
-        <h2 class="balance-value">$0000</h2>
+        <h2 class="balance-value">0000$</h2>
       </article>
     </section>
     <section class="container">
@@ -67,23 +67,24 @@
       </article>
 
       <article class="flexchildright">
-        <div class="boxright transactions">
+        <div class="boxright">
           <h3>Transactions</h3>
-          <div class="transactions-row">
-            <div class="transactions-type transactions-type-deposit">
+          <div class="transactions">
+          <div class="transactions-row Deposit">
+            <div class="">
               2
             </div>
-            <div class="transactions-type">Deposit</div>
+            <div class="transactions-type transactions-type-Deposit">Deposit</div>
             <div class="transactions-value">4000$</div>
           </div>
-          <div class="transactions-row">
-            <div class="transactions-type transactions-type-withdrawal">
+          <div class="transactions-row Withdrawl">
+            <div class="">
               1
             </div>
-            <div class="transactions-type">Loan</div>
+            <div class="transactions-type transactions-type-Withdrawl">Withdrawl</div>
             <div class="transactions-value">-378$</div>
           </div>
-
+        </div>
         </div>
         <div class="summary">
           <div>
@@ -99,14 +100,15 @@
             <h3 class="summaryvalueinterest">0000€</h3>
           </div>
 
-          <button class="btn-sort">&downarrow; SORT</button>
+          <button class="btn-sort">&downarrow; Sort</button>
         </div>
 
       </article>
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <script src="script.js" type="module"></script>
+  <script src="accountcreation.js" type="module"></script>
 </body>
 
 </html>
