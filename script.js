@@ -232,10 +232,13 @@ class App {
     localStorage.setItem("accounts", JSON.stringify(accounts));
   }
   _getLocalStorage() {
+    console.log("Getting local storage");
     const current_accounts = JSON.parse(localStorage.getItem("accounts"));
-    // console.log(current_accounts);
+    console.log(current_accounts);
     if (current_accounts && current_accounts.length > 0) {
+      console.log("here");
       current_accounts.forEach((acc) => {
+        console.log(acc);
         this.#accounts.push(
           new account(acc.name, acc.interestRate, acc.transactions)
         );
