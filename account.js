@@ -10,12 +10,11 @@ class account {
     this.calcSummary();
   }
   generateusername() {
-    his.username = this.name
+    this.username = this.name
       .toLowerCase()
       .split(" ")
       .map((name) => name[0] + name[1])
       .join("");
-    t;
   }
   generatepin() {
     this.pin = count * 1111;

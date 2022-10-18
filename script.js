@@ -241,6 +241,7 @@ class App {
         );
       });
     } else {
+      console.log("No accounts found");
       INITIAL_ACCOUNTS.forEach((acc) => {
         this.#accounts.push(
           new account(acc.name, acc.interestRate, acc.transactions)
