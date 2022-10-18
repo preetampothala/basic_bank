@@ -1,4 +1,4 @@
-import INITIAL_ACCOUNTS from "./accountcreation.js";
+import INITIAL_ACCOUNTS from "./initialaccounts.js";
 import account from "./account.js";
 
 const appElem = document.querySelector(".app");
@@ -46,7 +46,7 @@ class App {
     let text = ``;
     const username = loginUserElem.value;
     const pin = Number(loginPinElem.value);
-    console.log(username, pin);
+    // console.log(username, pin);
     this.#currentAccount = this.#accounts.find(
       (acc) => acc.username === username && acc.pin === pin
     );
@@ -75,20 +75,20 @@ class App {
     e.preventDefault();
     const amount = Number(transferAmtElem.value);
     const receiver = transferToElem.value;
-    console.log(amount, receiver);
+    // console.log(amount, receiver);
     const receiverAccount = this.#accounts.find(
       (acc) => acc.username === receiver
     );
-    console.log(receiverAccount, this.#currentAccount);
-    console.log(
-      amount > 0,
-      this.#currentAccount.balance,
-      this.#currentAccount.balance >= amount,
-      receiverAccount?.username !== this.#currentAccount.username
-    );
+    // console.log(receiverAccount, this.#currentAccount);
+    // console.log(
+    //   amount > 0,
+    //   this.#currentAccount.balance,
+    //   this.#currentAccount.balance >= amount,
+    //   receiverAccount?.username !== this.#currentAccount.username
+    // );
     let transferReturn = this.#currentAccount.transfer(amount, receiverAccount);
     if (transferReturn === `success`) {
-      console.log(receiverAccount.transactions);
+      // console.log(receiverAccount.transactions);
       // receiverAccount.transactions.push(Number(amount));
       this._updateUI(this.#currentAccount);
     } else {
@@ -118,7 +118,7 @@ class App {
   }
 
   _loan(e) {
-    console.log("Loan");
+    // console.log("Loan");
     e.preventDefault();
     const amount = Number(loanAmtElem.value);
     // console.log(
@@ -190,12 +190,12 @@ class App {
   }
   _sortTransactions() {
     // console.log(this.#currentAccount);
-    console.log(sort);
+    // console.log(sort);
     let sortResult = this.#currentAccount.sortTrans(sort);
-    console.log(sortResult);
+    // console.log(sortResult);
     this._displayTransactions(sortResult);
     sort = !sort;
-    console.log(sort);
+    // console.log(sort);
   }
   _displayTransactions(transactions) {
     transactionsElem.innerHTML = "";
