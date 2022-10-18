@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Basic Bank</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -13,15 +14,27 @@
   <nav>
     <img src="logo.svg" alt="Logo" class="logo" />
     <h3 class="welcome">Log in to get started</h3>
-<form class="login">
+    <form class="login">
       <input type="text" placeholder="Username" class="login-input-user" />
-      <!-- In practice, use type="password" -->
       <input type="password" placeholder="PIN" maxlength="4" class="login-input-pin" />
       <button class="login-btn">&rarr;</button>
     </form>
   </nav>
+  <section class="errormessage loginerrormessage">
+
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        <i class="material-icons loginclose" style="font-size:18px">close</i>
+
+    </section>
   <main class="app">
+    <section class="errormessage apperrormessage">
+
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        <i class="material-icons appclose" style="font-size:18px">close</i>
+
+    </section>
     <section>
+
       <article class="balance">
         <h2 class="balance-label">Current balance</h2>
         <h2 class="balance-value">0000$</h2>
@@ -70,21 +83,21 @@
         <div class="boxright">
           <h3>Transactions</h3>
           <div class="transactions">
-          <div class="transactions-row Deposit">
-            <div class="">
-              2
+            <div class="transactions-row Deposit">
+              <div class="">
+                2
+              </div>
+              <div class="transactions-type transactions-type-Deposit">Deposit</div>
+              <div class="transactions-value">4000$</div>
             </div>
-            <div class="transactions-type transactions-type-Deposit">Deposit</div>
-            <div class="transactions-value">4000$</div>
-          </div>
-          <div class="transactions-row Withdrawl">
-            <div class="">
-              1
+            <div class="transactions-row Withdrawl">
+              <div class="">
+                1
+              </div>
+              <div class="transactions-type transactions-type-Withdrawl">Withdrawl</div>
+              <div class="transactions-value">-378$</div>
             </div>
-            <div class="transactions-type transactions-type-Withdrawl">Withdrawl</div>
-            <div class="transactions-value">-378$</div>
           </div>
-        </div>
         </div>
         <div class="summary">
           <div>
@@ -109,6 +122,7 @@
 
   <script src="script.js" type="module"></script>
   <script src="accountcreation.js" type="module"></script>
+  <script src="account.js" type="module"></script>
 </body>
 
 </html>
