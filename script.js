@@ -54,7 +54,7 @@ class App {
     if (this.#currentAccount) {
       if (this.#currentAccount?.pin === Number(pin)) {
         welcomeTextElem.textContent = `Welcome back, ${
-          this.#currentAccount.owner.split(" ")[0]
+          this.#currentAccount.name.split(" ")[0]
         }`;
       }
     } else {
@@ -233,16 +233,17 @@ class App {
   }
   _getLocalStorage() {
     const current_accounts = JSON.parse(localStorage.getItem("accounts"));
+    // console.log(current_accounts);
     if (current_accounts && current_accounts.length > 0) {
       current_accounts.forEach((acc) => {
         this.#accounts.push(
-          new account(acc.owner, acc.interestRate, acc.transactions)
+          new account(acc.name, acc.interestRate, acc.transactions)
         );
       });
     } else {
       INITIAL_ACCOUNTS.forEach((acc) => {
         this.#accounts.push(
-          new account(acc.owner, acc.interestRate, acc.transactions)
+          new account(acc.name, acc.interestRate, acc.transactions)
         );
       });
     }
@@ -250,5 +251,4 @@ class App {
 }
 
 let app = new App();
-
 console.log(app);

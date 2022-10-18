@@ -1,7 +1,7 @@
 let count = 1;
 class account {
-  constructor(owner, interestrate, transactions) {
-    this.owner = owner;
+  constructor(name, interestrate, transactions) {
+    this.name = name;
     this.transactions = transactions;
     this.interestrate = interestrate;
     this.generateusername();
@@ -10,16 +10,15 @@ class account {
     this.calcSummary();
   }
   generateusername() {
-    const username = this.owner
+    his.username = this.name
       .toLowerCase()
       .split(" ")
       .map((name) => name[0] + name[1])
       .join("");
-    this.username = username;
+    t;
   }
   generatepin() {
-    let pin = count * 1111;
-    this.pin = pin;
+    this.pin = count * 1111;
     count++;
   }
   calcBalance() {
@@ -56,8 +55,8 @@ class account {
     ) {
       // console.log(`loan valid`);
       this.transactions.push(amount);
-      result = `success`;
-      return result;
+
+      return (result = `success`);
     } else {
       // console.log(`loan invalid`);
       if (!(amount > 0 === true)) result = `Enter amount greater than Zero`;
