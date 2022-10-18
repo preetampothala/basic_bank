@@ -62,9 +62,6 @@ class App {
       else if (!(this.#currentAccount?.pin === Number(pin)))
         text = `Please enter a correct pin`;
       this._displayErrorMsg(loginErrorMsgElem, text);
-      // alert(`Login Error. ${text}`);
-      // errorMsgElem.innerHTML = "";
-      // errorMsgElem.innerHTML = `<p>Login Error. s<span style="font-weight:600">${text}</span></p>`;
     }
     loginUserElem.value = loginPinElem.value = "";
     loginPinElem.blur();
