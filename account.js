@@ -48,18 +48,18 @@ class account {
     return { in: this.in, out: this.out, interest: this.interest };
   }
   loan(amount) {
-    console.log(`loan`);
+    // console.log(`loan`);
     let result = ``;
     if (
       amount > 0 &&
       this.transactions.some((transaction) => transaction >= amount * 0.1)
     ) {
-      console.log(`loan valid`);
+      // console.log(`loan valid`);
       this.transactions.push(amount);
       result = `success`;
       return result;
     } else {
-      console.log(`loan invalid`);
+      // console.log(`loan invalid`);
       if (!(amount > 0 === true)) result = `Enter amount greater than Zero`;
       else if (
         !this.transactions.some((transaction) => transaction >= amount * 0.1)
@@ -77,9 +77,9 @@ class account {
       this.balance >= amount &&
       receiverAccount?.username !== this.username
     ) {
-      console.log("Transfer valid");
+      // console.log("Transfer valid");
       receiverAccount.transactions.push(Number(amount));
-      console.log(receiverAccount.transactions);
+      // console.log(receiverAccount.transactions);
       this.transactions.push(-Number(amount));
       return (text = `success`);
     } else {
@@ -93,7 +93,7 @@ class account {
     }
   }
   sortTrans(sort) {
-    console.log(sort);
+    // console.log(sort);
     return sort
       ? this.transactions.slice().sort((a, b) => a - b)
       : this.transactions;
