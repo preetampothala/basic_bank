@@ -61,7 +61,7 @@ class App {
       if (!this.#currentAccount) text = `No such account exists`;
       else if (!(this.#currentAccount?.pin === Number(pin)))
         text = `Please enter a correct pin`;
-      this._displayErrorMsg(loginErrorMsgElem, text);
+      this._displayErrorMsg(loginErrorMsgElem, text, "Login");
     }
     loginUserElem.value = loginPinElem.value = "";
     loginPinElem.blur();
@@ -211,7 +211,7 @@ class App {
       transactionsElem.insertAdjacentHTML("afterbegin", html);
     });
   }
-  _displayErrorMsg(elem, msg, type) {
+  _displayErrorMsg(elem, msg, type = ``) {
     elem.querySelector("p").textContent = "";
     elem.querySelector("p").textContent = `${type} Error. ${msg}`;
     elem.style.display = "flex";
