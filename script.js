@@ -184,6 +184,7 @@ class App {
     // 		.toFixed(2)
     // );
     let { in: inward, out: outward, interest: interest } = acc.calcSummary();
+    console.log(inward, outward, interest);
     summaryValueInElem.textContent = `${inward}$`;
     summaryValueOutElem.textContent = `${Math.abs(outward)}$`;
     summaryValueInterestElem.textContent = `${interest}$`;
@@ -224,28 +225,31 @@ class App {
     const accounts = [];
     this.#accounts.forEach((account) => {
       accounts.push({
-        owner: account.owner,
+        name: account.name,
         transactions: account.transactions,
-        interestRate: account.interestrate,
+        interestrate: account.interestrate,
       });
     });
     localStorage.setItem("accounts", JSON.stringify(accounts));
   }
   _getLocalStorage() {
-    // console.log("Getting local storage");
+    console.log("Getting data from local storage");
     const current_accounts = JSON.parse(localStorage.getItem("accounts"));
-    // console.log(current_accounts);
+    console.log(current_accounts);
     if (current_accounts && current_accounts.length > 0) {
       // console.log("here");
       current_accounts.forEach((acc) => {
         // console.log(acc);
         this.#accounts.push(
-          new account(acc.name, acc.interestRate, acc.transactions)
+          new account(acc.name, acc.interestrate, acc.transactions)
         );
       });
     } else {
-      // console.log("No accounts found");
+      console.log(
+        "No accounts found in local storage, generating new accounts"
+      );
       INITIAL_ACCOUNTS.forEach((acc) => {
+        console.log(acc);
         this.#accounts.push(
           new account(acc.name, acc.interestRate, acc.transactions)
         );

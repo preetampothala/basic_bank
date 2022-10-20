@@ -1,7 +1,7 @@
 const INITIAL_ACCOUNTS = [
   {
     name: "John Doe",
-    transactions: [200, 455.23, -306.5, 25000, -642.21, -133.9, 79.97, 1300],
+    transactions: [200, 455.23, -306.5, -642.21, -133.9, 79.97, 1300],
     interestRate: 1.2,
   },
   {
