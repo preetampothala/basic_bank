@@ -53,8 +53,11 @@ class App {
     // console.log(this.#currentAccount);
     if (this.#currentAccount) {
       if (this.#currentAccount?.pin === Number(pin)) {
+        this._updateUI(this.#currentAccount);
+        appElem.style.display = "block";
+        console.log(this.#currentAccount.name.split(" "));
         welcomeTextElem.textContent = `Welcome back, ${
-          this.#currentAccount.name.split(" ")[0]
+          this.#currentAccount.name
         }`;
         this._closeErrormsg();
       }
@@ -67,9 +70,7 @@ class App {
 
     loginUserElem.value = loginPinElem.value = "";
     loginPinElem.blur();
-    this._updateUI(this.#currentAccount);
 
-    appElem.style.display = "block";
     // appElem.style.opacity = 100;
   }
 
