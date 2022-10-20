@@ -159,14 +159,12 @@ class App {
 
   _payeeDropdownDisplay(current) {
     transferToElem.innerHTML = "";
-    let defaultText = `<option value="" disabled selected>Select Payee</option>`;
-    let accountname = ``;
+    let accountname = `<option value="" disabled selected>Select Payee</option>`;
     this.#accounts.forEach((acc) => {
       if (acc.username !== current.username) {
         accountname += `<option value="${acc.username}">${acc.username}</option>`;
       }
     });
-    transferToElem.insertAdjacentHTML("beforeend", defaultText);
     transferToElem.insertAdjacentHTML("beforeend", accountname);
     // transferToElem.innerHTML = text;
   }
