@@ -151,11 +151,25 @@ class App {
   }
   _updateUI(acc) {
     // this._closeerrormsg();
+    this._payeeDropdownDisplay(acc);
     this._displayBalance(acc);
     this._displaysummary(acc);
     this._displayTransactions(acc.transactions);
   }
 
+  _payeeDropdownDisplay(current) {
+    transferToElem.innerHTML = "";
+    let defaultText = `<option value="" disabled selected>Select Payee</option>`;
+    let accountname = ``;
+    this.#accounts.forEach((acc) => {
+      if (acc.username !== current.username) {
+        accountname += `<option value="${acc.username}">${acc.username}</option>`;
+      }
+    });
+    transferToElem.insertAdjacentHTML("beforeend", defaultText);
+    transferToElem.insertAdjacentHTML("beforeend", accountname);
+    // transferToElem.innerHTML = text;
+  }
   _displayBalance(acc) {
     // acc.balance = acc.transactions.reduce((acc, cur) => acc + cur, 0);
     // console.log(this.#currentAccount.balance);
