@@ -56,6 +56,7 @@ class App {
         welcomeTextElem.textContent = `Welcome back, ${
           this.#currentAccount.name.split(" ")[0]
         }`;
+        this._closeErrormsg();
       }
     } else {
       if (!this.#currentAccount) text = `No such account exists`;
@@ -63,6 +64,7 @@ class App {
         text = `Please enter a correct pin`;
       this._displayErrorMsg(loginErrorMsgElem, text, "Login");
     }
+
     loginUserElem.value = loginPinElem.value = "";
     loginPinElem.blur();
     this._updateUI(this.#currentAccount);
@@ -217,7 +219,8 @@ class App {
     elem.querySelector("p").textContent = `${type} Error. ${msg}`;
     elem.style.display = "flex";
   }
-  _closeErrormsg(e) {
+
+  _closeErrormsg() {
     appErrorMsgElem.style.display = "none";
     loginErrorMsgElem.style.display = "none";
   }
@@ -235,7 +238,7 @@ class App {
   _getLocalStorage() {
     console.log("Getting data from local storage");
     const current_accounts = JSON.parse(localStorage.getItem("accounts"));
-    console.log(current_accounts);
+    console.log(current_accounts ? "Data found" : "No data found");
     if (current_accounts && current_accounts.length > 0) {
       // console.log("here");
       current_accounts.forEach((acc) => {
@@ -245,11 +248,9 @@ class App {
         );
       });
     } else {
-      console.log(
-        "No accounts found in local storage, generating new accounts"
-      );
+      console.log("Generating new accounts");
       INITIAL_ACCOUNTS.forEach((acc) => {
-        console.log(acc);
+        // console.log(acc);
         this.#accounts.push(
           new account(acc.name, acc.interestRate, acc.transactions)
         );
