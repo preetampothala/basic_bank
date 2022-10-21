@@ -234,6 +234,10 @@ i {
   border-radius: 4rem;
   margin: 0 1rem;
 }
+.trcount {
+  width: 5%;
+  text-align: left;
+}
 .transactions-value {
   text-align: end;
   width: 15%;

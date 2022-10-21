@@ -55,7 +55,6 @@ class App {
       if (this.#currentAccount?.pin === Number(pin)) {
         this._updateUI(this.#currentAccount);
         appElem.style.display = "block";
-        console.log(this.#currentAccount.name.split(" "));
         welcomeTextElem.textContent = `Welcome back, ${
           this.#currentAccount.name
         }`;
@@ -218,7 +217,7 @@ class App {
     transactions.forEach(function (transaction, i) {
       const type = transaction > 0 ? "Deposit" : "Withdrawl";
       const html = `<div class="transactions-row ${type}">
-      <div>
+      <div class="trcount">
         ${i + 1}
       </div>
       <div class="transactions-type transactions-type-${type}">${type}</div>
