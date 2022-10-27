@@ -287,4 +287,17 @@ i {
 	h3 {
 		margin: 0.5rem 0 1.5rem 0;
 	}
+	.boxleft {
+		/* flex: 1; */
+		background-color: #fff;
+		padding: 1rem 1.5rem;
+		box-shadow: 0px 0px 7px 2px rgb(70 63 63 / 10%);
+		border-radius: 0.3rem;
+		margin: 1rem;
+		width: 100%;
+	}
+	main {
+		max-width: 100%;
+		margin: 2.5rem 1rem;
+	}
 }
