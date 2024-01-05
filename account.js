@@ -4,21 +4,10 @@ class account {
     this.name = name;
     this.transactions = transactions;
     this.interestrate = interestrate;
-    this.generateusername();
-    this.generatepin();
     this.calcBalance();
     this.calcSummary();
-  }
-  generateusername() {
-    this.username = this.name
-      .toLowerCase()
-      .split(" ")
-      .map((name) => name[0] + name[1])
-      .join("");
-  }
-  generatepin() {
-    this.pin = count * 1111;
-    count++;
+    this.generateusername();
+    this.generatepin();
   }
   calcBalance() {
     this.balance = this.transactions.reduce((acc, cur) => acc + cur, 0);
@@ -45,6 +34,18 @@ class account {
     );
     return { in: this.in, out: this.out, interest: this.interest };
   }
+
+  generatepin() {
+    this.pin = count * 1111;
+    count++;
+  }
+  generateusername() {
+    this.username = this.name
+      .toLowerCase()
+      .split(" ")
+      .map((name) => name[0] + name[1])
+      .join("");
+  }
   loan(amount) {
     // console.log(`loan`);
     let result = ``;
@@ -66,6 +67,12 @@ class account {
 
       return result;
     }
+  }
+  sortTrans(sort) {
+    // console.log(sort);
+    return sort
+      ? this.transactions.slice().sort((a, b) => a - b)
+      : this.transactions;
   }
   transfer(amount, receiverAccount) {
     let text = ``;
@@ -89,12 +96,6 @@ class account {
         text = `Please enter a different To account name that your current account`;
       return text;
     }
-  }
-  sortTrans(sort) {
-    // console.log(sort);
-    return sort
-      ? this.transactions.slice().sort((a, b) => a - b)
-      : this.transactions;
   }
 }
 
